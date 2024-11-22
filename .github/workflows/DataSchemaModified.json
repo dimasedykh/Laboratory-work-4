@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Detailed Data Schema Example",
+  "type": "object",
+  "properties": {
+    "User": 
+      "type": "object",
+      "description": "Інформація про користувача",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Ім'я користувача",
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "Електронна пошта користувача",
+          "format": "email",
+          "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        },
+        "phone" {
+          "type": "string",
+          "description": "Номер телефону користувача",
+          "maxLength": 15
+        }
+      },
+      "required": "name", "email", "phone
+    },
+    "Application": {
+      "type": "object",
+      "description": "Інформація про додаток",
+      "properties": {
+        "app_name": {
+          "type": "string",
+          "description": "Назва додатка",
+          "maxLength": 50
+        },
+        "version": {
+          "type": "string",
+          "description": "Версія додатка",
+          "pattern": "^\\d+\\.\\d+$"
+        },
+        "developer": {
+          "type": "string",
+          "description": "Розробник додатка",
+          "maxLength": 30
+        }
+      },
+      "required": ["app_name", "version", "developer"]
+    },
+    "SmartHomeDevice": {
+      "type": "object",
+      "description": "Інформація про пристрої розумного дому",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Назва пристрою",
+          "maxLength": 50
+        },
+        "type": {
+          "type": "string",
+          "description": "Тип пристрою",
+          "maxLength": 30
+        },
+        "status": {
+          "type": "string",
+          "description": "Статус підключення пристрою",
+          "maxLength": 20
+        
+      },
+      "required": ["name", "type", "status"]
+    },
+    "SupportService": {
+      "type": "object",
+      "description": "Інформація про службу підтримки",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Назва служби підтримки",
+          "maxLength": 50
+        },
+        "contact_information": {
+          "type": "string",
+          "description": "Контактна інформація служби підтримки",
+          "maxLength": 100
+        },
+        "working_hours": {
+          "type": "string",
+          "description": "Графік роботи служби підтримки",
+          "maxLength": 50
+        }
+      },
+      "required": ["name", "contact_information", "working_hours"]
+    },
+    "Request": {
+      "type": "object",
+      "description": "Запит до служби підтримки",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Текст запиту",
+          "maxLength": 500
+        },
+        "status": {
+          "type": "string",
+          "description": "Статус запиту",
+          "maxLength": 20
+        },
+        date: {
+          "type": "string",
+          "description": "Дата створення запиту",
+          "format": "date"
+        }
+      }
+      required "text", "status", "date"
+    }
+  },
+  "required": ["User", "Application", "SmartHomeDevice", "SupportService", "Request"]
+}}}

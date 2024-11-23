@@ -8,12 +8,8 @@ jobs:
   PrintLanguageVersions:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Java Version
-        run: java --version
       - name: Print Node Version
         run: node --version
-      - name: Print Python Version
-        run: python --version
 
   PrintDBMSVersions:
     runs-on: ubuntu-latest
@@ -25,9 +21,5 @@ jobs:
           tar -xzf mongodb.tgz
           sudo mv mongodb-linux-x86_64-ubuntu2004-5.0.5/bin/* /usr/local/bin/
           rm -rf mongodb.tgz mongodb-linux-x86_64-ubuntu2004-5.0.5
-      - name: Print PostgreSQL Version
-        run: psql --version
-      - name: Print MySQL Version
-        run: mysql -V
       - name: Print MongoDB Version
         run: mongod --version
